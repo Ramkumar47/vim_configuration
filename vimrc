@@ -25,3 +25,4 @@ colorscheme seti
 
 " incremental search highlighting 
 set incsearch
+
