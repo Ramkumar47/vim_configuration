@@ -26,3 +26,11 @@ colorscheme seti
 " incremental search highlighting 
 set incsearch
 
+filetype plugin on
+
+" searchdown into subfolders
+" provides tab completion for all file-related tasks
+set path+=**
+
+" display all matching files when doing tab-complete
+set wildmenu
