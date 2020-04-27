@@ -11,9 +11,6 @@ Plug 'scrooloose/nerdcommenter'
 " overall syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
-" molokail colorscheme plugin
-Plug 'tomasr/molokai'
-
 call plug#end()
 
 " setting leader key
@@ -34,3 +31,6 @@ set path+=**
 
 " display all matching files when doing tab-complete
 set wildmenu
+
+" set show typing command
+set showcmd
