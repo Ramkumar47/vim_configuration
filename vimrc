@@ -39,7 +39,7 @@ set cursorline
 set cursorcolumn
 
 " tab autocompletion on the bottom status bar
-set wildmode=longest,list,full
+" set wildmode=longest,list,full
 
 " fix splitting direction
 set splitbelow splitright
@@ -48,6 +48,11 @@ set splitbelow splitright
 " setlocal formatoptions-=cro " disables that feature
 " setlocal formatoptions=cro " enables that feature
 
+" set GUI options
+set guioptions-=m  " remove menu bar
+set guioptions-=T  " remove toolbar
+set guioptions-=r  " remove right-hand scroll bar
+set guioptions-=L  " remove left-hand scroll bar
 
 " nerd commenter options-------------------------
 " Add spaces after comment delimiters by default

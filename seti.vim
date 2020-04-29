@@ -19,8 +19,8 @@ hi ColorColumn                  ctermfg=NONE  ctermbg=235   cterm=NONE          
 hi LineNr                       ctermfg=243   ctermbg=235   cterm=NONE          guifg=#757777   guibg=#282a2b   gui=NONE
 hi VertSplit                    ctermfg=239   ctermbg=239   cterm=NONE          guifg=#4c4f4f   guibg=#4c4f4f   gui=NONE
 hi MatchParen                   ctermfg=149   ctermbg=NONE  cterm=underline     guifg=#9fca56   guibg=NONE      gui=underline
-hi StatusLine                   ctermfg=188   ctermbg=239   cterm=bold          guifg=#d4d7d6   guibg=#4c4f4f   gui=bold
-hi StatusLineNC                 ctermfg=188   ctermbg=239   cterm=NONE          guifg=#d4d7d6   guibg=#4c4f4f   gui=NONE
+hi StatusLine                   ctermfg=188   ctermbg=88   cterm=bold          guifg=#d4d7d6   guibg=#870000   gui=bold
+hi StatusLineNC                 ctermfg=188   ctermbg=233   cterm=NONE          guifg=#d4d7d6   guibg=#121212   gui=NONE
 hi Pmenu                        ctermfg=NONE  ctermbg=NONE  cterm=NONE          guifg=NONE      guibg=NONE      gui=NONE
 hi PmenuSel                     ctermfg=NONE  ctermbg=74    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE
 hi IncSearch                    ctermfg=16    ctermbg=74    cterm=NONE          guifg=#151718   guibg=#55b5db   gui=NONE
