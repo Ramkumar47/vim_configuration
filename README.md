@@ -1,7 +1,7 @@
 # vim_configuration
 my personal vim configuration files
 
-## configuration setup instructions 
+## configuration setup instructions
 * run the following command to create the **vim-plug** plugin that will enable the installation of additional pluggins
 > curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -9,7 +9,8 @@ my personal vim configuration files
 > cp vimrc ~/.vimrc
 
 * then open vim and type the command **:PlugInstall** to freshly install all the listed plugins in the vimrc file
-
+* then copy the **seti.vim** colorscheme file to the theme folder. This is a customized seti colorscheme
+> cp seti.vim ~/.vim/plugged/seti.vim/colors/
 
 ## useful references
 * Vim-Plug github page : https://github.com/junegunn/vim-plug
