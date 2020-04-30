@@ -54,6 +54,9 @@ set guioptions-=T  " remove toolbar
 set guioptions-=r  " remove right-hand scroll bar
 set guioptions-=L  " remove left-hand scroll bar
 
+" show commands entered in normal mode at lower right corner
+set showcmd
+
 " nerd commenter options-------------------------
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
