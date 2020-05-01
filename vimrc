@@ -21,6 +21,12 @@ let mapleader = " "
 syntax on
 colorscheme seti
 
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
 " incremental search highlighting
 set incsearch
 
