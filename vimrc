@@ -60,6 +60,9 @@ set guioptions-=T  " remove toolbar
 set guioptions-=r  " remove right-hand scroll bar
 set guioptions-=L  " remove left-hand scroll bar
 
+" set color column margin
+set colorcolumn=80
+
 " show commands entered in normal mode at lower right corner
 set showcmd
 
@@ -76,3 +79,11 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+
+
+" custom statusline option------------------------------
+set laststatus=2 " enabling statusline in single buffer also
+set statusline=%<%f " filename
+set statusline+=\ \ %y%r%m " file type, readonly notifier and modifier flag
+set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+set statusline+=\ \Col:\ %-4c\ BufferNo:\ %n" current column number
