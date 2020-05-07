@@ -1,8 +1,0 @@
-vim command cheatsheet
-https://devhints.io/vim
-
-nice tutorial showing features of vim
-https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/
-
-90% of commands can be done in vim without plugins
-https://www.youtube.com/watch?v=XA2WjJbmmoM
