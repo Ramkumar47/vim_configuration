@@ -30,6 +30,9 @@ set wildmenu
 " incremental search highlighting
 set incsearch
 
+" open new files in the same directory as the open file; mainly in gvim
+set autochdir
+
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -43,9 +46,6 @@ set mouse=a
 " set current line and column highlighting
 set cursorline
 set cursorcolumn
-
-" tab autocompletion on the bottom status bar
-" set wildmode=longest,list,full
 
 " fix splitting direction
 set splitbelow splitright
