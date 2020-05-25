@@ -33,6 +33,9 @@ set incsearch
 " open new files in the same directory as the open file; mainly in gvim
 set autochdir
 
+" automatic indentation
+set autoindent
+
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
