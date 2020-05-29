@@ -1,6 +1,12 @@
+"------------------------------------------------------------------------------
+" Personal Vim Configuration
+"------------------------------------------------------------------------------
+
 " setting relative line numbering
 set number relativenumber
 
+" plugin install
+" section----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
 	" seti colorscheme plugin
@@ -43,21 +49,25 @@ autocmd BufWritePre * %s/\s\+$//e
 set ignorecase
 set smartcase
 
-" enable mouse in vim
+" enable mouse in
+" vim--------------------------------------------------------------------------
 set mouse=a
 
-" set current line and column highlighting
+" set current line and column
+" highlighting-----------------------------------------------------------------
 set cursorline
 set cursorcolumn
 
-" fix splitting direction
+" fix splitting
+" direction--------------------------------------------------------------------
 set splitbelow splitright
 
 " Enable and disable auto commenting on next line when pressing enter
 " setlocal formatoptions-=cro " disables that feature
 " setlocal formatoptions=cro " enables that feature
 
-" set GUI options
+" set GUI
+" options----------------------------------------------------------------------
 set guioptions-=m  " remove menu bar
 set guioptions-=T  " remove toolbar
 set guioptions-=r  " remove right-hand scroll bar
@@ -69,7 +79,8 @@ set colorcolumn=80
 " show commands entered in normal mode at lower right corner
 set showcmd
 
-" nerd commenter options-------------------------
+" nerd commenter
+" options----------------------------------------------------------------------
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -84,9 +95,21 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 
-" custom statusline option------------------------------
+" custom statusline
+" option-----------------------------------------------------------------------
 set laststatus=2 " enabling statusline in single buffer also
 set statusline=%<%f " filename
 set statusline+=\ \ %y%r%m " file type, readonly notifier and modifier flag
 set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
 set statusline+=\ \Col:\ %-4c\ BufferNo:\ %n" current column number
+
+" header line custom
+" function---------------------------------------------------------------------
+function! HoriDash()
+	normal! mM
+	normal! 100A-
+	normal! 0
+	normal! 79lD
+	normal! `M
+endfunction
+nnoremap <leader>hl :call HoriDash()<cr>
