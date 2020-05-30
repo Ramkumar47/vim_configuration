@@ -18,6 +18,9 @@ call plug#begin('~/.vim/plugged')
 	" overall syntax highlighting
 	Plug 'sheerun/vim-polyglot'
 
+	" alignment pluging
+	Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 
 " setting leader key
@@ -113,3 +116,7 @@ function! HoriDash()
 	normal! `M
 endfunction
 nnoremap <leader>hl :call HoriDash()<cr>
+
+" easy align shortcut for markdown
+" table------------------------------------------------------------------------
+au FileType markdown map <tab> vip :EasyAlign*<Bar><Enter>
