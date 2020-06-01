@@ -69,12 +69,12 @@ set splitbelow splitright
 " setlocal formatoptions-=cro " disables that feature
 " setlocal formatoptions=cro " enables that feature
 
-" set GUI
-" options----------------------------------------------------------------------
-set guioptions-=m  " remove menu bar
-set guioptions-=T  " remove toolbar
-set guioptions-=r  " remove right-hand scroll bar
-set guioptions-=L  " remove left-hand scroll bar
+" " set GUI
+" " options----------------------------------------------------------------------
+" set guioptions-=m  " remove menu bar
+" set guioptions-=T  " remove toolbar
+" set guioptions-=r  " remove right-hand scroll bar
+" set guioptions-=L  " remove left-hand scroll bar
 
 " set color column margin
 set colorcolumn=80
