@@ -45,12 +45,28 @@ set autochdir
 " automatic indentation
 set autoindent
 
-" Remove trailing whitespace on save
+" Remove trailing whitespace on
+" save-------------------------------------------------------------------------
 autocmd BufWritePre * %s/\s\+$//e
+
+" Remove training blank lines at end of
+" file-------------------------------------------------------------------------
+" function! TrailBlankLines()
+"         normal! mM
+"         normal! G{}
+"         normal! jdG
+"         normal! 'M
+" endfunction
+" autocmd BufWritePre * call TrailBlankLines()
 
 " enable smart search - case-insensitivity search - case-sensitive when having upper case letters in search string
 set ignorecase
 set smartcase
+
+" smart tabbing with
+" spaces-----------------------------------------------------------------------
+set smarttab
+set tabstop=4
 
 " enable mouse in
 " vim--------------------------------------------------------------------------
