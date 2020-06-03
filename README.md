@@ -13,6 +13,7 @@ my personal vim configuration files
 > cp seti.vim ~/.vim/plugged/seti.vim/colors/
 
 * then copy the folder **ftplugin** to **~/.vim/** directory. This is used for commands related to individual FileTypes
+* After that, copy the contents of **autoload** to **~/.vim/autoload/** directory, it contains the function definitions used in ftplugin directory files
 
 ## useful references
 * Vim-Plug github page : https://github.com/junegunn/vim-plug
