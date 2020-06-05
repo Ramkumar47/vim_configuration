@@ -36,8 +36,10 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-" incremental search highlighting
-set incsearch
+" incremental search highlighting with hlsearch and keybinding to get rid of
+" it---------------------------------------------------------------------------
+set incsearch hlsearch
+nnoremap <Esc><Esc> :noh<cr>
 
 " open new files in the same directory as the open file; mainly in gvim
 set autochdir
@@ -140,3 +142,5 @@ au FileType markdown map <tab> vip :EasyAlign*<Bar><Enter>
 " CPP init function for openfoam-type
 " files------------------------------------------------------------------------
 autocmd BufReadPost <buffer> :call generalVimFunctions#InitCPP()
+
+"
