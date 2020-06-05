@@ -136,3 +136,7 @@ nnoremap <leader>hl :call HoriDash()<cr>
 " easy align shortcut for markdown
 " table------------------------------------------------------------------------
 au FileType markdown map <tab> vip :EasyAlign*<Bar><Enter>
+
+" CPP init function for openfoam-type
+" files------------------------------------------------------------------------
+autocmd BufReadPost <buffer> :call generalVimFunctions#InitCPP()
