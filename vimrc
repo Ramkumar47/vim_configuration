@@ -53,16 +53,6 @@ set autoindent
 " save-------------------------------------------------------------------------
 autocmd BufWritePre * %s/\s\+$//e
 
-" Remove training blank lines at end of
-" file-------------------------------------------------------------------------
-" function! TrailBlankLines()
-"         normal! mM
-"         normal! G{}
-"         normal! jdG
-"         normal! 'M
-" endfunction
-" autocmd BufWritePre * call TrailBlankLines()
-
 " enable smart search - case-insensitivity search - case-sensitive when having upper case letters in search string
 set ignorecase
 set smartcase
@@ -125,17 +115,10 @@ let g:NERDToggleCheckAllLines = 1
 " set statusline+=\ \ %y%r%m " file type, readonly notifier and modifier flag
 " set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
 " set statusline+=\ \Col:\ %-4c\ BufferNo:\ %n" current column number
-"
-" header line custom
+
+" header line custom call
 " function---------------------------------------------------------------------
-function! HoriDash()
-	normal! mM
-	normal! 100A-
-	normal! 0
-	normal! 79lD
-	normal! `M
-endfunction
-nnoremap <leader>hl :call HoriDash()<cr>
+nnoremap <leader>hl :call generalVimFunctions#HoriDash()<cr>
 
 " easy align shortcut for markdown
 " table------------------------------------------------------------------------
