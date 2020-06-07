@@ -21,6 +21,9 @@ call plug#begin('~/.vim/plugged')
 	" alignment pluging
 	Plug 'junegunn/vim-easy-align'
 
+	" airline statusbar
+	Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 " setting leader key
@@ -36,7 +39,8 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-" incremental search highlighting
+" incremental search
+" highlighting-----------------------------------------------------------------
 set incsearch
 
 " open new files in the same directory as the open file; mainly in gvim
@@ -114,14 +118,14 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 
-" custom statusline
-" option-----------------------------------------------------------------------
-set laststatus=2 " enabling statusline in single buffer also
-set statusline=%<%f " filename
-set statusline+=\ \ %y%r%m " file type, readonly notifier and modifier flag
-set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-set statusline+=\ \Col:\ %-4c\ BufferNo:\ %n" current column number
-
+" " custom statusline
+" " option-----------------------------------------------------------------------
+" set laststatus=2 " enabling statusline in single buffer also
+" set statusline=%<%f " filename
+" set statusline+=\ \ %y%r%m " file type, readonly notifier and modifier flag
+" set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+" set statusline+=\ \Col:\ %-4c\ BufferNo:\ %n" current column number
+"
 " header line custom
 " function---------------------------------------------------------------------
 function! HoriDash()
@@ -137,6 +141,14 @@ nnoremap <leader>hl :call HoriDash()<cr>
 " table------------------------------------------------------------------------
 au FileType markdown map <tab> vip :EasyAlign*<Bar><Enter>
 
-" CPP init function for openfoam-type
+" vim-airline
+" customizations---------------------------------------------------------------
+let g:airline_section_c = '%<%f'
+
+" Latex filetype, changing default plaintex to tex
+" format-----------------------------------------------------------------------
+autocmd BufNew,FileType plaintex exec ":set filetype=tex"
+
+" setting filetype to cpp mainly for OpenFOAM
 " files------------------------------------------------------------------------
-autocmd BufReadPost <buffer> :call generalVimFunctions#InitCPP()
+nnoremap <buffer> <leader>fc :set filetype=cpp<cr>
