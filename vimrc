@@ -9,14 +9,8 @@ set number relativenumber
 " section----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-	" seti colorscheme plugin
-	Plug 'trusktr/seti.vim'
-
 	" commenting plugin
 	Plug 'scrooloose/nerdcommenter'
-
-	" overall syntax highlighting
-	Plug 'sheerun/vim-polyglot'
 
 	" alignment pluging
 	Plug 'junegunn/vim-easy-align'

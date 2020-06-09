@@ -9,10 +9,8 @@ my personal vim configuration files
 > cp vimrc ~/.vimrc
 
 * then open vim and type the command **:PlugInstall** to freshly install all the listed plugins in the vimrc file
-* then copy the **seti.vim** colorscheme file to the theme folder. This is a customized seti colorscheme
-> cp seti.vim ~/.vim/plugged/seti.vim/colors/
 
-* then copy the folder **ftplugin** to **~/.vim/** directory. This is used for commands related to individual FileTypes
+* then copy the folders **ftplugin** and **colors** to **~/.vim/** directory. This are used for commands related to individual FileTypes and colorscheme
 * After that, copy the contents of **autoload** to **~/.vim/autoload/** directory, it contains the function definitions used in ftplugin directory files
 
 ## useful references
