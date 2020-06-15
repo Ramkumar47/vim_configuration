@@ -12,11 +12,11 @@ call plug#begin('~/.vim/plugged')
 	" commenting plugin
 	Plug 'scrooloose/nerdcommenter'
 
-	" alignment pluging
-	Plug 'junegunn/vim-easy-align'
-
 	" airline statusbar
 	Plug 'vim-airline/vim-airline'
+
+	" vim table mode
+	Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
 
@@ -114,10 +114,6 @@ let g:NERDToggleCheckAllLines = 1
 " function---------------------------------------------------------------------
 nnoremap <leader>hl :call generalVimFunctions#HoriDash()<cr>
 
-" easy align shortcut for markdown
-" table------------------------------------------------------------------------
-au FileType markdown map <tab> vip :EasyAlign*<Bar><Enter>
-
 " vim-airline
 " customizations---------------------------------------------------------------
 let g:airline_section_c = '%<%f'
@@ -129,3 +125,7 @@ autocmd BufNew,FileType plaintex exec ":set filetype=tex"
 " setting filetype to cpp mainly for OpenFOAM
 " files------------------------------------------------------------------------
 nnoremap <buffer> <leader>fc :set filetype=cpp<cr>
+
+" vim-table plugin
+" options----------------------------------------------------------------------
+let g:table_mode_corner='|' " this enables markdown type table corner
