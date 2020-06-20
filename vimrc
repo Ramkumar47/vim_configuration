@@ -33,6 +33,9 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
+" set encoding
+set encoding=utf-8
+
 " incremental search
 " highlighting-----------------------------------------------------------------
 set incsearch
@@ -117,6 +120,7 @@ nnoremap <leader>hl :call generalVimFunctions#HoriDash()<cr>
 " vim-airline
 " customizations---------------------------------------------------------------
 let g:airline_section_c = '%<%f'
+let g:airline_powerline_fonts = 1
 
 " Latex filetype, changing default plaintex to tex
 " format-----------------------------------------------------------------------
