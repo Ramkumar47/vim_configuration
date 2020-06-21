@@ -16,7 +16,8 @@ hi Visual                       ctermfg=16  ctermbg=74    cterm=NONE          gu
 hi CursorLine                   ctermfg=NONE  ctermbg=233   cterm=NONE          guifg=NONE      guibg=#121212   gui=NONE
 hi CursorColumn                 ctermfg=NONE  ctermbg=233   cterm=NONE          guifg=NONE      guibg=#121212   gui=NONE
 hi ColorColumn                  ctermfg=NONE  ctermbg=233   cterm=NONE          guifg=NONE      guibg=#121212   gui=NONE
-hi LineNr                       ctermfg=243   ctermbg=235   cterm=NONE          guifg=#757777   guibg=#282a2b   gui=NONE
+" hi LineNr                       ctermfg=243   ctermbg=235   cterm=NONE          guifg=#757777   guibg=#282a2b   gui=NONE
+hi LineNr                       ctermfg=243   ctermbg=NONE   cterm=NONE          guifg=#757777   guibg=#282a2b   gui=NONE
 hi VertSplit                    ctermfg=239   ctermbg=239   cterm=NONE          guifg=#4c4f4f   guibg=#4c4f4f   gui=NONE
 hi MatchParen                   ctermfg=149   ctermbg=NONE  cterm=underline     guifg=#9fca56   guibg=NONE      gui=underline
 hi StatusLine                   ctermfg=188   ctermbg=52   cterm=bold          guifg=#d4d7d6   guibg=#5f0000   gui=bold
@@ -28,7 +29,8 @@ hi Search                       ctermfg=NONE  ctermbg=NONE  cterm=underline     
 hi Directory                    ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Folded                       ctermfg=59    ctermbg=16    cterm=NONE          guifg=#41535b   guibg=#151718   gui=NONE
 
-hi Normal                       ctermfg=188   ctermbg=16    cterm=NONE          guifg=#d4d7d6   guibg=#000000   gui=NONE
+" hi Normal                       ctermfg=188   ctermbg=16    cterm=NONE          guifg=#d4d7d6   guibg=#000000   gui=NONE
+hi Normal                       ctermfg=188   ctermbg=NONE    cterm=NONE          guifg=#d4d7d6   guibg=#000000   gui=NONE
 hi Boolean                      ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Character                    ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Comment                      ctermfg=59    ctermbg=NONE  cterm=NONE          guifg=#41535b   guibg=NONE      gui=NONE
@@ -46,7 +48,8 @@ hi Function                     ctermfg=74    ctermbg=NONE  cterm=NONE          
 hi Identifier                   ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi Keyword                      ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi Label                        ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
-hi NonText                      ctermfg=73    ctermbg=0     cterm=NONE          guifg=#abaee8   guibg=#000000   gui=NONE
+" hi NonText                      ctermfg=73    ctermbg=0     cterm=NONE          guifg=#abaee8   guibg=#000000   gui=NONE
+hi NonText                      ctermfg=73    ctermbg=NONE     cterm=NONE          guifg=#abaee8   guibg=#000000   gui=NONE
 hi Number                       ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Operator                     ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi PreProc                      ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE
