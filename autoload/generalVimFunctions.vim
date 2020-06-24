@@ -16,6 +16,6 @@ endfunction
 function! generalVimFunctions#CleanBuffer()
 		" remove trailing whitespaces
 		normal! mM
-		%s/\s\+$//g
+		%s/\s\+$//e
 		normal! `M
 endfunction
