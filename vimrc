@@ -48,7 +48,7 @@ set autoindent
 
 " Remove trailing whitespace on
 " save-------------------------------------------------------------------------
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * :call generalVimFunctions#CleanBuffer()
 
 " enable smart search - case-insensitivity search - case-sensitive when having upper case letters in search string
 set ignorecase
