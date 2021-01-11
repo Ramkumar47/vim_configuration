@@ -36,6 +36,9 @@ set wildmenu
 " set encoding
 set encoding=utf-8
 
+" set shiftwidth
+set shiftwidth=4
+
 " incremental search
 " highlighting-----------------------------------------------------------------
 set incsearch
@@ -73,7 +76,7 @@ set cursorcolumn
 set splitbelow splitright
 
 " Enable and disable auto commenting on next line when pressing enter
-" setlocal formatoptions-=cro " disables that feature
+setlocal formatoptions-=cro " disables that feature
 " setlocal formatoptions=cro " enables that feature
 
 " " set GUI
