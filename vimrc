@@ -75,10 +75,6 @@ set cursorcolumn
 " direction--------------------------------------------------------------------
 set splitbelow splitright
 
-" Enable and disable auto commenting on next line when pressing enter
-setlocal formatoptions-=cro " disables that feature
-" setlocal formatoptions=cro " enables that feature
-
 " " set GUI
 " " options----------------------------------------------------------------------
 " set guioptions-=m  " remove menu bar
@@ -136,3 +132,13 @@ nnoremap <buffer> <leader>fc :set filetype=cpp<cr>
 " vim-table plugin
 " options----------------------------------------------------------------------
 let g:table_mode_corner='|' " this enables markdown type table corner
+
+" Enable and disable auto commenting on next line when pressing
+" enter------------------------------------------------------------------------
+" setlocal formatoptions-=cro " disables that feature
+" set formatoptions-=o " disables that feature
+" setlocal formatoptions=cro " enables that feature
+" tried to remove from core, but it is repetitive and following is a better
+" solution it seems
+autocmd Filetype * set formatoptions-=o
+
