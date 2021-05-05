@@ -116,6 +116,10 @@ let g:NERDToggleCheckAllLines = 1
 " function---------------------------------------------------------------------
 nnoremap <leader>hl :call generalVimFunctions#HoriDash()<cr>
 
+" custom tab converting
+" function---------------------------------------------------------------------
+nnoremap <leader>rt :call generalVimFunctions#ConvertTab()<cr>
+
 " vim-airline
 " customizations---------------------------------------------------------------
 let g:airline_section_c = '%<%f'
@@ -127,7 +131,7 @@ autocmd BufNew,FileType plaintex exec ":set filetype=tex"
 
 " setting filetype to cpp mainly for OpenFOAM
 " files------------------------------------------------------------------------
-nnoremap <buffer> <leader>fc :set filetype=cpp<cr>
+nnoremap <leader>fc :set filetype=cpp<cr>
 
 " vim-table plugin
 " options----------------------------------------------------------------------

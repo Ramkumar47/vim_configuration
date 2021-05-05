@@ -19,3 +19,11 @@ function! generalVimFunctions#CleanBuffer()
 		%s/\s\+$//e
 		normal! `M
 endfunction
+
+" converting all tabs to
+" whitespaces------------------------------------------------------------------
+function! generalVimFunctions#ConvertTab()
+	execute ":set expandtab"
+	execute ":retab"
+	execute ":w"
+endfunction
