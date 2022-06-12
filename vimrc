@@ -18,12 +18,16 @@ call plug#begin('~/.vim/plugged')
 	" vim table mode
 	Plug 'dhruvasagar/vim-table-mode'
 
+	" vim-easy-align
+	Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 
 " setting leader key
 let mapleader = " "
 
 " setting colorscheme
+let fortran_free_source=1
 syntax on
 colorscheme seti
 
