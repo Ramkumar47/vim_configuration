@@ -150,3 +150,7 @@ let g:table_mode_corner='|' " this enables markdown type table corner
 " solution it seems
 autocmd Filetype * set formatoptions-=o
 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+set backspace=2

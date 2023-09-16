@@ -83,3 +83,12 @@ function latexVimFunctions#CreateTabular()
 		execute "normal! k"
 endfunction
 
+" function to define
+" mathmode---------------------------------------------------------------------
+function latexVimFunctions#CreateMathMode()
+		" defining tabular environment
+		execute "normal! a\\(\\)\<Esc>"
+		execute "normal! h"
+		execute "startinsert"
+endfunction
+

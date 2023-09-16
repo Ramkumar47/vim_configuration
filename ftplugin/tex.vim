@@ -15,3 +15,6 @@ nnoremap <buffer> <leader><leader> :call latexVimFunctions#BracketSub()<cr>
 
 " calling function to create tabular environment
 nnoremap <buffer> <leader>bt :call latexVimFunctions#CreateTabular()<cr>
+
+" calling function to create math mode
+nnoremap <buffer> <leader>mm :call latexVimFunctions#CreateMathMode()<cr>
