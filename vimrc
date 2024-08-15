@@ -7,19 +7,28 @@ set number relativenumber
 
 " plugin install
 " section----------------------------------------------------------------------
+
+" let g:plugs_disabled = ['vim-airline','vim-table-mode','nerdcommenter','vim-easy-align']
+let g:plugs_disabled = []
+
 call plug#begin('~/.vim/plugged')
 
-	" commenting plugin
-	Plug 'scrooloose/nerdcommenter'
+    " commenting plugin
+    Plug 'scrooloose/nerdcommenter'
 
-	" airline statusbar
-	Plug 'vim-airline/vim-airline'
+    " " airline statusbar
+    Plug 'vim-airline/vim-airline'
 
-	" vim table mode
-	Plug 'dhruvasagar/vim-table-mode'
+    " vim table mode
+    Plug 'dhruvasagar/vim-table-mode'
 
-	" vim-easy-align
-	Plug 'junegunn/vim-easy-align'
+    " vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+
+    " vim-airline themes
+    Plug 'vim-airline/vim-airline-themes'
+
+    " call plug_disable#commit()
 
 call plug#end()
 
@@ -66,9 +75,12 @@ set smartcase
 set smarttab
 set tabstop=4
 
-" enable mouse in
+" " enable mouse in
+" " vim--------------------------------------------------------------------------
+" set mouse=a
+" disable mouse in
 " vim--------------------------------------------------------------------------
-set mouse=a
+set mouse-=a
 
 " set current line and column
 " highlighting-----------------------------------------------------------------
@@ -81,10 +93,10 @@ set splitbelow splitright
 
 " " set GUI
 " " options----------------------------------------------------------------------
-" set guioptions-=m  " remove menu bar
-" set guioptions-=T  " remove toolbar
-" set guioptions-=r  " remove right-hand scroll bar
-" set guioptions-=L  " remove left-hand scroll bar
+set guioptions-=m  " remove menu bar
+set guioptions-=T  " remove toolbar
+set guioptions-=r  " remove right-hand scroll bar
+set guioptions-=L  " remove left-hand scroll bar
 
 " set color column margin
 set colorcolumn=80
@@ -136,6 +148,10 @@ autocmd BufNew,FileType plaintex exec ":set filetype=tex"
 " setting filetype to cpp mainly for OpenFOAM
 " files------------------------------------------------------------------------
 nnoremap <leader>fc :set filetype=cpp<cr>
+
+" setting filetype to java for Processing
+" files------------------------------------------------------------------------
+nnoremap <leader>fj :set filetype=java<cr>
 
 " vim-table plugin
 " options----------------------------------------------------------------------
