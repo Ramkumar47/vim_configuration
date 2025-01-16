@@ -63,7 +63,7 @@ function! pythonVimFunctions#InitializePlot()
     execute "normal! mA"
 
     " setting plot font size
-    execute "normal! iplt.rcParams.update({\"font.size\":15})"
+    execute "normal! oplt.rcParams.update({\"font.size\":15})"
 
     " defining main figure
     execute "normal! oplt.figure(figsize=(16,9))"
@@ -73,7 +73,7 @@ function! pythonVimFunctions#InitializePlot()
     execute "normal! oplt.ylabel(<>)"
     execute "normal! oplt.title(<>)"
     execute "normal! o\# plt.legend(loc=(1.01,0.75))"
-    execute "normal! o\# plt.savefig(<>,bbox_inches=\"tight\")"
+    execute "normal! o\# plt.savefig(<>,dpi=150,bbox_inches=\"tight\")"
     execute "normal! oplt.show()"
     execute "normal! o"
 

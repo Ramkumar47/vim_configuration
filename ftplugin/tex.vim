@@ -1,6 +1,6 @@
 " compile latex document
-" map <buffer> <F5> :! pdflatex %<CR><CR>
-map <buffer> <F5> :update <bar> !pdflatex %<CR><CR>
+map <buffer> <F5> :! pdflatex %<CR><CR>
+" map <buffer> <F10> :update <bar> !pdflatex %<CR><CR>
 " open pdf viewer
 map <buffer> <F6> :! zathura $(echo % \| sed 's/tex/pdf/') > /dev/null 2>&1 & disown <CR><CR>
 
