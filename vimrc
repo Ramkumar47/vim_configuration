@@ -16,17 +16,11 @@ call plug#begin('~/.vim/plugged')
     " commenting plugin
     Plug 'scrooloose/nerdcommenter'
 
-    " " airline statusbar
-    Plug 'vim-airline/vim-airline'
-
     " vim table mode
     Plug 'dhruvasagar/vim-table-mode'
 
     " vim-easy-align
     Plug 'junegunn/vim-easy-align'
-
-    " vim-airline themes
-    Plug 'vim-airline/vim-airline-themes'
 
     " call plug_disable#commit()
 
@@ -170,3 +164,24 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 set backspace=2
+
+
+
+" custom statusline
+" option-----------------------------------------------------------------------
+hi NormalColor guifg=#c0c0c0 guibg=#0000ff ctermbg=21 ctermfg=7 cterm=bold
+hi InsertColor guifg=#808080 guibg=#c0c0c0 ctermbg=5 ctermfg=7 cterm=bold
+hi ReplaceColor guifg=#080808 guibg=#ffffff ctermbg=231 ctermfg=232 cterm=bold
+hi VisualColor guifg=#000000 guibg=#ff5f00 ctermbg=202 ctermfg=0 cterm=bold
+hi CommandColor guifg=#000000 guibg=#008080 ctermbg=8 ctermfg=7 cterm=bold
+hi ResetColor guifg=#ffffff guibg=#000000 gui=bold ctermbg=0 cterm=bold
+set laststatus=2 " enabling statusline in single buffer also
+set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ REPLACE\ ':''}
+set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=%#CommandColor#%{(mode()=='c')?'\ \ COMMAND\ ':''}
+set statusline+=%#ResetColor#\ \ %<%f " filename
+set statusline+=\ \ %r%m " file type, readonly notifier and modifier flag
+set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
