@@ -91,6 +91,7 @@ let s:delimiterMap = {
     \ 'desktop': { 'left': '#' },
     \ 'dhcpd': { 'left': '#' },
     \ 'diff': { 'left': '#' },
+    \ 'dts': { 'left': '/*', 'right': '*/', 'leftAlt': '//' },
     \ 'django': { 'left': '{% comment %}', 'right': '{% endcomment %}', 'leftAlt': '{#', 'rightAlt': '#}' },
     \ 'dns': { 'left': ';' },
     \ 'docbk': { 'left': '<!--', 'right': '-->' },
@@ -420,6 +421,7 @@ let s:delimiterMap = {
     \ 'txt2tags': { 'left': '%' },
     \ 'typescript': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'typescriptreact': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+    \ 'typst': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'uc': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'uc4': { 'left': '!' },
     \ 'uil': { 'left': '!' },
@@ -485,7 +487,7 @@ function! nerdcommenter#SetUp() abort
     let b:NERDSexyComMarker = ''
 
     if has_key(s:delimiterMap, filetype)
-        let b:NERDCommenterDelims = s:delimiterMap[filetype]
+        let b:NERDCommenterDelims = copy(s:delimiterMap[filetype])
         for i in ['left', 'leftAlt', 'right', 'rightAlt']
             if !has_key(b:NERDCommenterDelims, i)
                 let b:NERDCommenterDelims[i] = ''

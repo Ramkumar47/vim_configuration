@@ -22,6 +22,13 @@ call plug#begin('~/.vim/plugged')
     " vim-easy-align
     Plug 'junegunn/vim-easy-align'
 
+	" " catppuccin theme
+	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+	Plug 'catppuccin/vim', { 'as': 'catppuccin_vim' }
+
+	" lightline plugin vim
+	Plug 'itchyny/lightline.vim'
+
     " call plug_disable#commit()
 
 call plug#end()
@@ -32,7 +39,8 @@ let mapleader = " "
 " setting colorscheme
 let fortran_free_source=1
 syntax on
-colorscheme seti
+" colorscheme seti
+colorscheme catppuccin-mocha
 
 " Provides tab-completion for all file-related tasks
 set path+=**
@@ -80,6 +88,9 @@ set mouse-=a
 " highlighting-----------------------------------------------------------------
 set cursorline
 set cursorcolumn
+hi CursorLine cterm=none gui=none
+
+hi Normal guibg=NONE ctermbg=NONE
 
 " fix splitting
 " direction--------------------------------------------------------------------
@@ -165,18 +176,25 @@ nmap ga <Plug>(EasyAlign)
 
 set backspace=2
 
+" lightline
+" customization----------------------------------------------------------------
+set laststatus=2
+let g:lightline={'colorscheme': 'catppuccin_mocha'}
+" preventing repeated information shown below lightline
+set noshowmode
 
 
-" custom statusline
-" option-----------------------------------------------------------------------
-hi NormalColor guifg=#c0c0c0 guibg=#0000ff ctermbg=21 ctermfg=7 cterm=bold
-hi InsertColor guifg=#808080 guibg=#c0c0c0 ctermbg=5 ctermfg=7 cterm=bold
-hi UnsavedColor guifg=#808080 guibg=#c0c0c0 ctermbg=5 ctermfg=7 cterm=bold
-hi ReplaceColor guifg=#080808 guibg=#ffffff ctermbg=231 ctermfg=232 cterm=bold
-hi VisualColor guifg=#000000 guibg=#ff5f00 ctermbg=202 ctermfg=0 cterm=bold
-hi CommandColor guifg=#000000 guibg=#008080 ctermbg=8 ctermfg=7 cterm=bold
-hi ResetColor guifg=#ffffff guibg=#000000 gui=bold ctermbg=0 cterm=bold
-set laststatus=2 " enabling statusline in single buffer also
+
+" " custom statusline
+" " option-----------------------------------------------------------------------
+" hi NormalColor guifg=#c0c0c0 guibg=#0000ff ctermbg=21 ctermfg=7 cterm=bold
+" hi InsertColor guifg=#808080 guibg=#c0c0c0 ctermbg=5 ctermfg=7 cterm=bold
+" hi UnsavedColor guifg=#808080 guibg=#c0c0c0 ctermbg=5 ctermfg=7 cterm=bold
+" hi ReplaceColor guifg=#080808 guibg=#ffffff ctermbg=231 ctermfg=232 cterm=bold
+" hi VisualColor guifg=#000000 guibg=#ff5f00 ctermbg=202 ctermfg=0 cterm=bold
+" hi CommandColor guifg=#000000 guibg=#008080 ctermbg=8 ctermfg=7 cterm=bold
+" hi ResetColor guifg=#ffffff guibg=#000000 gui=bold ctermbg=0 cterm=bold
+" set laststatus=2 " enabling statusline in single buffer also
 
 " set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ NORMAL\ ':''}
 " set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ INSERT\ ':''}
@@ -189,58 +207,58 @@ set laststatus=2 " enabling statusline in single buffer also
 " set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
 " set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
 
-function! StatusVisualBlock()
-	set laststatus=2 " enabling statusline in single buffer also
-	set statusline=%#VisualColor#%{'\ \ VISUAL-BLOCK\ '}
-	set statusline+=%#ResetColor#\ \ %<%f " filename
-	set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
-	set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-	set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
-endfunction
-
-function! StatusNormal()
-	set laststatus=2 " enabling statusline in single buffer also
-	set statusline=%#NormalColor#%{'\ \ NORMAL\ '}
-	set statusline+=%#ResetColor#\ \%<%f " filename
-	set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
-	set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-	set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
-endfunction
-
-function! StatusVisual()
-	set laststatus=2 " enabling statusline in single buffer also
-	set statusline=%#VisualColor#%{'\ \ VISUAL\ '}
-	set statusline+=%#ResetColor#\ \ %<%f " filename
-	set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
-	set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-	set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
-endfunction
-
-function! StatusInsert()
-	set laststatus=2 " enabling statusline in single buffer also
-	set statusline=%#InsertColor#%{'\ \ INSERT\ '}
-	set statusline+=%#ResetColor#\ \ %<%f " filename
-	set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
-	set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-	set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
-endfunction
-
-function! StatusCommand()
-	set laststatus=2 " enabling statusline in single buffer also
-	set statusline=%#CommandColor#%{'\ \ COMMAND\ '}
-	set statusline+=%#ResetColor#\ \ %<%f " filename
-	set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
-	set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
-	set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
-endfunction
-
-augroup CustomStatusLineSetup
-	autocmd!
-	autocmd ModeChanged *:* call StatusVisualBlock()
-	autocmd ModeChanged *:v* call StatusVisual()
-	autocmd ModeChanged *:V* call StatusVisual()
-	autocmd ModeChanged *:n* call StatusNormal()
-	autocmd ModeChanged *:i* call StatusInsert()
-	autocmd ModeChanged *:c* call StatusCommand()
-	autocmd VimEnter * call StatusNormal()
-augroup END
+" function! StatusVisualBlock()
+"     set laststatus=2 " enabling statusline in single buffer also
+"     set statusline=%#VisualColor#%{'\ \ VISUAL-BLOCK\ '}
+"     set statusline+=%#ResetColor#\ \ %<%f " filename
+"     set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
+"     set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+"     set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
+" endfunction
+"
+" function! StatusNormal()
+"     set laststatus=2 " enabling statusline in single buffer also
+"     set statusline=%#NormalColor#%{'\ \ NORMAL\ '}
+"     set statusline+=%#ResetColor#\ \%<%f " filename
+"     set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
+"     set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+"     set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
+" endfunction
+"
+" function! StatusVisual()
+"     set laststatus=2 " enabling statusline in single buffer also
+"     set statusline=%#VisualColor#%{'\ \ VISUAL\ '}
+"     set statusline+=%#ResetColor#\ \ %<%f " filename
+"     set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
+"     set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+"     set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
+" endfunction
+"
+" function! StatusInsert()
+"     set laststatus=2 " enabling statusline in single buffer also
+"     set statusline=%#InsertColor#%{'\ \ INSERT\ '}
+"     set statusline+=%#ResetColor#\ \ %<%f " filename
+"     set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
+"     set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+"     set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
+" endfunction
+"
+" function! StatusCommand()
+"     set laststatus=2 " enabling statusline in single buffer also
+"     set statusline=%#CommandColor#%{'\ \ COMMAND\ '}
+"     set statusline+=%#ResetColor#\ \ %<%f " filename
+"     set statusline+=\ \ %y%r%#UnsavedColor#%m%#ResetColor# " file type, readonly notifier and modifier flag
+"     set statusline+=\ %=\ \ [%l\/%L] " line number / total number of lines
+"     set statusline+=\ \Col:\ %-1c\ B:\ %n " current column number
+" endfunction
+"
+" augroup CustomStatusLineSetup
+"     autocmd!
+"     autocmd ModeChanged *:* call StatusVisualBlock()
+"     autocmd ModeChanged *:v* call StatusVisual()
+"     autocmd ModeChanged *:V* call StatusVisual()
+"     autocmd ModeChanged *:n* call StatusNormal()
+"     autocmd ModeChanged *:i* call StatusInsert()
+"     autocmd ModeChanged *:c* call StatusCommand()
+"     autocmd VimEnter * call StatusNormal()
+" augroup END
